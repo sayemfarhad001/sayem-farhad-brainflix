@@ -1,0 +1,81 @@
+/* mobile-styling-start */
+.sidevideo {
+  margin: 2.5rem 1rem 1.5rem 1rem;
+  &__main-container {
+  }
+  &__title {
+    font-family: avenir-demi;
+    @include mobile-labels;
+    color: $silver;
+    margin: 0 0 2.5rem 0;
+  }
+  &__template-container {
+    display: flex;
+    margin-bottom: 1.5rem;
+  }
+  &__image {
+    width: 120px;
+    height: 70px;
+    margin-right: 1rem;
+    object-fit: cover;
+    border-radius: 0.3125rem;
+  }
+  &__text-container {
+  }
+  &__title-video {
+    font-family: avenir-demi;
+    @include mobile-paragraph;
+    word-break: break-word;
+    width: 8.625rem;
+    padding: 0 0 1rem 0;
+    margin: 0;
+  }
+  &__channel {
+    font-family: avenir-regular;
+    @include mobile-paragraph;
+    margin: 0;
+  }
+}
+/* tablet-styling-start */
+@include medium {
+  .sidevideo {
+    margin: 2.5rem 1.5rem 1.5rem 1.5rem;
+    &__title-video {
+      font-family: avenir-demi;
+      @include mobile-paragraph;
+      word-break: break-word;
+      width: 164px;
+      margin: 0;
+    }
+    &__channel {
+      font-family: avenir-regular;
+      @include mobile-paragraph;
+      margin: 0;
+    }
+  }
+}
+
+/* tablet-styling-end */
+
+/* desktop-styling-start */
+
+@include large {
+  .sidevideo {
+    padding: 2.5rem 11.25rem 0px 1.5rem;
+    margin: 0;
+    &__title-video {
+      font-family: avenir-demi;
+      @include mobile-paragraph;
+      word-break: break-word;
+      width: 10.4375rem;
+      margin: 0;
+    }
+    &__channel {
+      font-family: avenir-regular;
+      @include mobile-paragraph;
+      margin: 0;
+    }
+  }
+}
+
+/* desktop-styling-end */

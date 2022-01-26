@@ -1,0 +1,32 @@
+/* universal-reset */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+// Partials imported from my partials folder for styling
+@import "./partials/breakpoints";
+@import "./partials/colors";
+@import "./partials/fonts";
+@import "./partials/mixins";
+@import "./partials/navigation";
+@import "./partials/hero";
+@import "./partials/main";
+@import "./partials/comments";
+@import "./partials/sidevideo";
+
+@include large {
+  .all-components__main {
+    display: flex;
+  }
+  .all-components__two {
+    border-left: 1px solid $mercury;
+  }
+}
