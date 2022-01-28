@@ -2,9 +2,8 @@ import React from "react";
 import eye from "../assets/icons/views.svg";
 import heart from "../assets/icons/likes.svg";
 
-const Main = ({ maain }) => {
-  //Function start
-  const Mainconst = maain.map((object, index) => {
+const Main = ({ main, timeElapsed }) => {
+  const Mainconst = main.map((object, index) => {
     return (
       <div key={index} className="main">
         <div className="main__main-container">
@@ -12,10 +11,10 @@ const Main = ({ maain }) => {
           <div className="main__subtitle-views-likes-container">
             <div className="main__subtitle-container">
               <h2 className="main__subtitle-container--author">
-                {object.channel}
+                By {object.channel}
               </h2>
               <h2 className="main__subtitle-container--date">
-                {object.timestamp}
+                {timeElapsed(object.timestamp)}
               </h2>
             </div>
             <div className="main__views-likes-container">

@@ -1,4 +1,4 @@
-/* universal-reset */
+// Global Reset
 html,
 body {
   margin: 0;
@@ -11,7 +11,7 @@ body {
   box-sizing: inherit;
 }
 
-// Partials imported from my partials folder for styling
+// Import Partials
 @import "./partials/breakpoints";
 @import "./partials/colors";
 @import "./partials/fonts";
@@ -22,6 +22,7 @@ body {
 @import "./partials/comments";
 @import "./partials/sidevideo";
 
+// Desktop Display
 @include large {
   .all-components__main {
     display: flex;

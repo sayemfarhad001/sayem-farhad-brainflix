@@ -1,16 +1,13 @@
 import React from "react";
-// import video from "../assets/Video/BrainStation Sample Video.mp4";
-// import poster from "../assets/Images/euro.JPG";
 
-const Hero = ({ heero }) => {
-    //Function start
-    const Heroconst = heero.map((object, index) => {
+const Hero = ({ hero }) => {
+    const Heroconst = hero.map((object, index) => {
         return (
             <div key={index} className="hero">
                 <video className="hero__video" poster={object.image} controls>
-                    <source src="" type="video/mp4" />
+                    <source src="" type="video" />
                     <p>Your browser doesn't support HTML5 video. Here is
-                        a <a href="myVideo.mp4">link to the video</a> instead.</p>
+                        a <a href="link">link to the video</a> instead.</p>
                 </video>
             </div>
         );

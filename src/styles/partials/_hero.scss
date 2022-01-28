@@ -1,4 +1,4 @@
-/* mobile-styling-start */
+// Mobile First Style
 .hero {
   height: 57.19vw;
   &__video {
@@ -10,9 +10,8 @@
     }
   }
 }
-/* mobile-styling-end */
 
-/* tablet-styling-start */
+// Tablet Style
 @include medium {
   .hero {
     height: 25rem;
@@ -25,9 +24,8 @@
     }
   }
 }
-/* tablet-styling-end */
 
-/* desktop-styling-start */
+// Desktop Style
 @include large {
   .hero {
     height: 33.75rem;
@@ -36,4 +34,3 @@
     }
   }
 }
-/* desktop-styling-end */

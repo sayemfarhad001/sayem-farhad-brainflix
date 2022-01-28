@@ -1,7 +1,7 @@
 import React from "react";
+import commentIcon from "../assets/icons/add_comment.svg";
 
-const Comments = ({ comments }) => {
-  //Function start
+const Comments = ({ comments, timeElapsed }) => {
   const Comments = comments.map((object, index) => {
     return (
       <div key={index} className="comment__default">
@@ -10,7 +10,7 @@ const Comments = ({ comments }) => {
         </div>
         <div className="comment__header">
           <h2 className="comment__header--name">{object.name}</h2>
-          <h3 className="comment__header--date">{object.date}</h3>
+          <h3 className="comment__header--date">{timeElapsed(object.timestamp)}</h3>
         </div>
         <div className="comment__text-container-default">
           <p className="comment__text-container-default--comment">
@@ -24,7 +24,7 @@ const Comments = ({ comments }) => {
   return (
     <div>
       <main className="comment">
-        <h1 className="comment__title">3 Comments</h1>
+        <h1 className="comment__title">{comments.length} Comments</h1>
         <div className="comment__name-container">
           <div className="comment__image"></div>
           <form className="comment__input-container">
@@ -41,7 +41,14 @@ const Comments = ({ comments }) => {
               ></textarea>
             </div>
             <div className="comment__button-container">
-              <button className="comment__button">COMMENT</button>
+              <button className="comment__button">              
+                <img
+                  className="header__upload-container-inner--icon"
+                  src={commentIcon}
+                  alt=""
+                />
+                <span>COMMENT</span>
+              </button>
             </div>
           </form>
         </div>

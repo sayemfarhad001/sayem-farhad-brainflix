@@ -1,4 +1,4 @@
-/* mobile-styling-start */
+// Mobile First Style
 .main {
   margin: 2rem 1rem 2.5rem 1rem;
   &__title {
@@ -8,7 +8,7 @@
   }
   &__subtitle-container {
     display: flex;
-    margin-bottom: 2rem;
+    flex-direction: column;
     &--author {
       font-family: avenir-demi;
       @include mobile-subheader;
@@ -22,10 +22,19 @@
       margin: 0;
     }
   }
+  &__subtitle-views-likes-container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-top: 1px solid $mercury;
+    border-bottom: 1px solid $mercury;
+  }
   &__views-likes-container {
     display: flex;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid $mercury;
+    flex-direction: column;
+    color: $silver;
+    height: 1rem;
   }
   &__views-container {
     display: flex;
@@ -59,29 +68,30 @@
     }
   }
 }
-/* mobile-styling-end */
 
-/* tablet-styling-start */
+// Tablet Styles
 @include medium {
   .main {
     margin: 3rem 1.5rem 4rem 1.5rem;
-
-    &__main-container {
-    }
     &__title {
       font-family: avenir-bold;
       @include header-one;
       margin-bottom: 1.5rem;
     }
     &__subtitle-container {
+      flex-direction: row;
       &--author {
         @include sub-header;
       }
     }
     &__views-likes-container {
       border: none;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-right: 5px;
     }
     &__views-container {
+      padding-right: 10px;
       &--number {
         align-self: center;
       }
@@ -94,6 +104,7 @@
     &__subtitle-views-likes-container {
       display: flex;
       justify-content: space-between;
+      border-top: none;
       border-bottom: 1px solid $mercury;
     }
     &__description-container {
@@ -105,13 +116,11 @@
     }
   }
 }
-/* tablet-styling-end */
 
-/* desktop-styling-start */
+// Desktop Styles
 @include large {
   .main {
     margin: 3rem 0px 4rem 11.25rem;
-
     &__main-container {
       width: 712px;
     }

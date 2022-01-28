@@ -1,8 +1,6 @@
-/* mobile-styling-start */
+// Mobile First Style
 .sidevideo {
   margin: 2.5rem 1rem 1.5rem 1rem;
-  &__main-container {
-  }
   &__title {
     font-family: avenir-demi;
     @include mobile-labels;
@@ -20,8 +18,6 @@
     object-fit: cover;
     border-radius: 0.3125rem;
   }
-  &__text-container {
-  }
   &__title-video {
     font-family: avenir-demi;
     @include mobile-paragraph;
@@ -36,7 +32,8 @@
     margin: 0;
   }
 }
-/* tablet-styling-start */
+
+// Tablet Styles
 @include medium {
   .sidevideo {
     margin: 2.5rem 1.5rem 1.5rem 1.5rem;
@@ -55,10 +52,7 @@
   }
 }
 
-/* tablet-styling-end */
-
-/* desktop-styling-start */
-
+// Desktop Styles
 @include large {
   .sidevideo {
     padding: 2.5rem 11.25rem 0px 1.5rem;
@@ -77,5 +71,3 @@
     }
   }
 }
-
-/* desktop-styling-end */

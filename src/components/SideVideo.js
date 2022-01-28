@@ -1,7 +1,7 @@
 import React from "react";
 
 const SideVideo = ({ sideVideos }) => {
-  const mapping = sideVideos.map((object, index) => {
+  const videoMapper = sideVideos.map((object, index) => {
     return (
       <div key={index} className="sidevideo__main-container">
         <div className="sidevideo__template-container">
@@ -19,10 +19,9 @@ const SideVideo = ({ sideVideos }) => {
     <>
       <div className="sidevideo">
         <h5 className="sidevideo__title">NEXT VIDEO</h5>
-        {mapping}
+        {videoMapper}
       </div>
     </>
   );
 };
-
 export default SideVideo;

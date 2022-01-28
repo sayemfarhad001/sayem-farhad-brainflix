@@ -1,4 +1,4 @@
-/* mobile-styling-start */
+// Mobile First Style
 .header {
   height: 10.5625rem;
   &__main-container {
@@ -8,6 +8,7 @@
     height: 3rem;
     display: flex;
     justify-content: center;
+    padding: 10px;
   }
   &__search-container {
     display: flex;
@@ -16,6 +17,7 @@
     border: 1px solid $mercury;
     background-color: $alabaster;
     border-radius: 0.25rem;
+    width: 81%;
     &--icon {
       padding: 0 0.625rem 0 1.25rem;
     }
@@ -28,10 +30,10 @@
     display: flex;
     &-inner {
       display: flex;
-      width: 14rem;
+      width: 100%;
       height: 3.0313rem;
       background-color: $blue-light;
-      margin: 0.5rem 1rem 0 0;
+      margin: 0.5rem 0 0 0;
       border-radius: 0.25rem;
       justify-content: center;
       align-items: center;
@@ -58,10 +60,19 @@
       border-radius: 2rem;
     }
   }
+  &__searchbar{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__mobile__muru{
+    margin-top: 0;
+  }
+  &__tablet__muru {
+   display: none; 
+  }
 }
-/* mobile-styling-end */
 
-/* tablet-styling-start */
+// Tablet Styles
 @include medium {
   .header {
     height: 5rem;
@@ -83,19 +94,28 @@
       margin: 1rem 0;
       margin-left: auto;
       &-inner {
-        width: 5.9375rem;
+        display: flex;
+        justify-content: center;
+        width: 9.9375rem;
         margin: 0 1.5rem;
+        padding-left: 5px;
+        padding-right: 5px;
       }
       &--mohan {
         align-self: flex-end;
         margin: 0;
       }
     }
+    &__mobile__muru {
+      display: none; 
+    }
+    &__tablet__muru {
+      display: flex; 
+    }
   }
 }
-/* tablet-styling-end */
 
-/* desktop-styling-start */
+// Desktop Styles
 @include large {
   .header {
     &__main-container {
@@ -109,4 +129,3 @@
     }
   }
 }
-/* desktop-styling-start */

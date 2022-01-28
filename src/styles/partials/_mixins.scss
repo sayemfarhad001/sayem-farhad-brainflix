@@ -1,4 +1,4 @@
-// mobile text mixins
+// Mobile text mixins
 
 @mixin mobile-header {
   font-size: 1.5rem;
@@ -20,8 +20,7 @@
   line-height: 1.25rem;
 }
 
-// tablet & desktop text mixins
-
+// Tablet & Desktop text mixins
 @mixin hero-header {
   font-size: 3.75rem;
   line-height: 4.25rem;

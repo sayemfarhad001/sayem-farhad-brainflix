@@ -34,12 +34,6 @@ class App extends React.Component {
     // Side Video array of objects
     sideVideo: [
         {
-            id: "84e96018-4022-434e-80bf-000ce4cd12b8",
-            title: "BMX Rampage: 2021 Highlights",
-            channel: "Red Cow",
-            image: "https://i.imgur.com/l2Xfgpl.jpg"
-        },
-        {
             id: "c05b9a93-8682-4ab6-aff2-92ebb4bbfc14",
             title: "Become A Travel Pro In One Easy Lesson",
             channel: "Todd Welch",
@@ -105,15 +99,56 @@ class App extends React.Component {
       }
     ]
   };
+
+  // DEEP DIVING EXPERIENCE
+  timeElapsed = (date) => {
+    if (typeof date !== 'object') {
+        date = new Date(date);
+    }
+    var seconds = Math.ceil((new Date(Date.now()) - date) / 1000);
+    var intervalType;
+    var interval = Math.floor(seconds / 31536000);
+    if (interval >= 1) {
+        intervalType = 'year';
+    } else {
+        interval = Math.floor(seconds / 2592000);
+        if (interval >= 1) {
+            intervalType = 'month';
+        } else {
+            interval = Math.floor(seconds / 86400);
+            if (interval >= 1) {
+                intervalType = 'day';
+            } else {
+                interval = Math.floor(seconds / 3600);
+                if (interval >= 1) {
+                    intervalType = "hour";
+                } else {
+                    interval = Math.floor(seconds / 60);
+                    if (interval >= 1) {
+                        intervalType = "minute";
+                    } else {
+                        interval = seconds;
+                        intervalType = "second";
+                    }
+                }
+            }
+        }
+    }
+    if (interval > 1 || interval === 0) {
+        intervalType += 's';
+    }
+    return `${interval} ${intervalType} ago`;
+  }
+
   render() {
     return (
       <div className="all-components">
         <Header />
-        <Hero heero={this.state.mainVideo} />
+        <Hero hero={this.state.mainVideo} />
         <div className="all-components__main">
           <div className="all-components__one">
-            <Main maain={this.state.mainVideo} />
-            <Comments comments={this.state.mainVideo[0].comments} />
+            <Main main={this.state.mainVideo} timeElapsed={this.timeElapsed} />
+            <Comments comments={this.state.mainVideo[0].comments} timeElapsed={this.timeElapsed}/>
           </div>
           <div className="all-components__two">
             <SideVideo sideVideos={this.state.sideVideo} />

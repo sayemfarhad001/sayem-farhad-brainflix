@@ -1,4 +1,3 @@
-/* universal-reset */
 html,
 body {
   margin: 0;
@@ -12,9 +11,6 @@ body {
   box-sizing: inherit;
 }
 
-/* media query for mobile */
-/* media query for tablet */
-/* media query for landscape, medium pixel density desktops */
 @font-face {
   font-family: avenir-regular;
   src: url("../assets/fonts/AvenirNextLTPro-Regular.otf");
@@ -27,7 +23,6 @@ body {
   font-family: avenir-demi;
   src: url("../assets/fonts/AvenirNextLTPro-Demi.otf");
 }
-/* mobile-styling-start */
 .header {
   height: 10.5625rem;
 }
@@ -38,6 +33,7 @@ body {
   height: 3rem;
   display: flex;
   justify-content: center;
+  padding: 10px;
 }
 .header__search-container {
   display: flex;
@@ -46,6 +42,7 @@ body {
   border: 1px solid #e1e1e1;
   background-color: #fafafa;
   border-radius: 0.25rem;
+  width: 81%;
 }
 .header__search-container--icon {
   padding: 0 0.625rem 0 1.25rem;
@@ -60,10 +57,10 @@ body {
 }
 .header__upload-container-inner {
   display: flex;
-  width: 14rem;
+  width: 100%;
   height: 3.0313rem;
   background-color: #0095ff;
-  margin: 0.5rem 1rem 0 0;
+  margin: 0.5rem 0 0 0;
   border-radius: 0.25rem;
   justify-content: center;
   align-items: center;
@@ -90,9 +87,17 @@ body {
   background-size: cover;
   border-radius: 2rem;
 }
+.header__searchbar {
+  display: flex;
+  justify-content: space-between;
+}
+.header__mobile__muru {
+  margin-top: 0;
+}
+.header__tablet__muru {
+  display: none;
+}
 
-/* mobile-styling-end */
-/* tablet-styling-start */
 @media only screen and (min-width: 768px) {
   .header {
     height: 5rem;
@@ -116,16 +121,24 @@ body {
     margin-left: auto;
   }
   .header__upload-container-inner {
-    width: 5.9375rem;
+    display: flex;
+    justify-content: center;
+    width: 9.9375rem;
     margin: 0 1.5rem;
+    padding-left: 5px;
+    padding-right: 5px;
   }
   .header__upload-container--mohan {
     align-self: flex-end;
     margin: 0;
   }
+  .header__mobile__muru {
+    display: none;
+  }
+  .header__tablet__muru {
+    display: flex;
+  }
 }
-/* tablet-styling-end */
-/* desktop-styling-start */
 @media only screen and (min-width: 1440px) {
   .header__main-container {
     margin: 0 11.25rem;
@@ -137,8 +150,6 @@ body {
     width: 16.4375rem;
   }
 }
-/* desktop-styling-start */
-/* mobile-styling-start */
 .hero {
   height: 57.19vw;
 }
@@ -152,8 +163,6 @@ body {
   outline-width: 0;
 }
 
-/* mobile-styling-end */
-/* tablet-styling-start */
 @media only screen and (min-width: 768px) {
   .hero {
     height: 25rem;
@@ -167,8 +176,6 @@ body {
        object-fit: cover;
   }
 }
-/* tablet-styling-end */
-/* desktop-styling-start */
 @media only screen and (min-width: 1440px) {
   .hero {
     height: 33.75rem;
@@ -177,8 +184,6 @@ body {
     width: 59rem;
   }
 }
-/* desktop-styling-end */
-/* mobile-styling-start */
 .main {
   margin: 2rem 1rem 2.5rem 1rem;
 }
@@ -190,7 +195,7 @@ body {
 }
 .main__subtitle-container {
   display: flex;
-  margin-bottom: 2rem;
+  flex-direction: column;
 }
 .main__subtitle-container--author {
   font-family: avenir-demi;
@@ -206,10 +211,19 @@ body {
   color: #afafaf;
   margin: 0;
 }
+.main__subtitle-views-likes-container {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-top: 1px solid #e1e1e1;
+  border-bottom: 1px solid #e1e1e1;
+}
 .main__views-likes-container {
   display: flex;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid #e1e1e1;
+  flex-direction: column;
+  color: #afafaf;
+  height: 1rem;
 }
 .main__views-container {
   display: flex;
@@ -246,8 +260,6 @@ body {
   margin: 0;
 }
 
-/* mobile-styling-end */
-/* tablet-styling-start */
 @media only screen and (min-width: 768px) {
   .main {
     margin: 3rem 1.5rem 4rem 1.5rem;
@@ -258,12 +270,21 @@ body {
     line-height: 2.75rem;
     margin-bottom: 1.5rem;
   }
+  .main__subtitle-container {
+    flex-direction: row;
+  }
   .main__subtitle-container--author {
     font-size: 1rem;
     line-height: 1.5rem;
   }
   .main__views-likes-container {
     border: none;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 5px;
+  }
+  .main__views-container {
+    padding-right: 10px;
   }
   .main__views-container--number {
     align-self: center;
@@ -274,6 +295,7 @@ body {
   .main__subtitle-views-likes-container {
     display: flex;
     justify-content: space-between;
+    border-top: none;
     border-bottom: 1px solid #e1e1e1;
   }
   .main__description-container {
@@ -284,8 +306,6 @@ body {
     width: 68%;
   }
 }
-/* tablet-styling-end */
-/* desktop-styling-start */
 @media only screen and (min-width: 1440px) {
   .main {
     margin: 3rem 0px 4rem 11.25rem;
@@ -298,7 +318,6 @@ body {
     padding-right: 2rem;
   }
 }
-/* mobile-styling-start */
 .comment {
   background-color: #ffffff;
   margin: 2.5rem 1rem 0 1rem;
@@ -366,6 +385,9 @@ body {
   margin: 0 0 1.5rem 0;
   outline-width: 0;
   padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .comment__button:hover {
   background-color: #004892;
@@ -415,8 +437,6 @@ body {
   padding: 1rem 0 1.5rem 1rem;
 }
 
-/* mobile-styling-end */
-/* tablet-styling-start */
 @media only screen and (min-width: 768px) {
   .comment {
     background-color: #ffffff;
@@ -500,7 +520,7 @@ body {
   .comment__header {
     position: relative;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
   }
   .comment__header--image-one {
     position: absolute;
@@ -524,7 +544,7 @@ body {
     font-family: avenir-regular;
     font-size: 1rem;
     margin: 0;
-    padding: 1.75rem 0 0 0;
+    padding: 1.75rem 1rem 0 0;
   }
   .comment__text-container-default {
     display: flex;
@@ -539,8 +559,6 @@ body {
     padding: 1rem 0 1.5rem 4rem;
   }
 }
-/* tablet-styling-end */
-/* desktop-styling-start */
 @media only screen and (min-width: 1440px) {
   .comment {
     width: 712px;
@@ -615,8 +633,6 @@ body {
     background-color: #004892;
   }
 }
-/* desktop-styling-end */
-/* mobile-styling-start */
 .sidevideo {
   margin: 2.5rem 1rem 1.5rem 1rem;
 }
@@ -655,7 +671,6 @@ body {
   margin: 0;
 }
 
-/* tablet-styling-start */
 @media only screen and (min-width: 768px) {
   .sidevideo {
     margin: 2.5rem 1.5rem 1.5rem 1.5rem;
@@ -675,8 +690,6 @@ body {
     margin: 0;
   }
 }
-/* tablet-styling-end */
-/* desktop-styling-start */
 @media only screen and (min-width: 1440px) {
   .sidevideo {
     padding: 2.5rem 11.25rem 0px 1.5rem;
@@ -697,7 +710,6 @@ body {
     margin: 0;
   }
 }
-/* desktop-styling-end */
 @media only screen and (min-width: 1440px) {
   .all-components__main {
     display: flex;
