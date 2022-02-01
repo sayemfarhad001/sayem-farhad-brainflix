@@ -3,9 +3,7 @@ import eye from "../assets/icons/views.svg";
 import heart from "../assets/icons/likes.svg";
 
 const Main = ({ main, timeElapsed }) => {
-  // const Mainconst = main.map((object, index) => {
     return (
-      // <div key={index} className="main">
       <div className="main">
         <div className="main__main-container">
           <h1 className="main__title">{main.title}</h1>
@@ -21,9 +19,7 @@ const Main = ({ main, timeElapsed }) => {
             <div className="main__views-likes-container">
               <div className="main__views-container">
                 <img className="main__views-container--icon" src={eye} alt="" />
-                <h2 className="main__views-container--number">
-                  {main.views}
-                </h2>
+                <h2 className="main__views-container--number">{main.views}</h2>
               </div>
               <div className="main__likes-container">
                 <img
@@ -31,21 +27,15 @@ const Main = ({ main, timeElapsed }) => {
                   src={heart}
                   alt=""
                 />
-                <h2 className="main__likes-container--number">
-                  {main.likes}
-                </h2>
+                <h2 className="main__likes-container--number">{main.likes}</h2>
               </div>
             </div>
           </div>
           <div className="main__description-container">
-            <p className="main__description-container--text">
-              {main.description}
-            </p>
+            <p className="main__description-container--text">{main.description}</p>
           </div>
         </div>
       </div>
     );
-  // });
-  // return <div>{Mainconst}</div>;
 };
 export default Main;

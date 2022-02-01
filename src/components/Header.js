@@ -3,7 +3,7 @@ import logo from "../assets/logo/BrainFlix-logo.svg";
 import searchIcon from "../assets/icons/search.svg";
 import plusIcon from "../assets/icons/upload.svg";
 
-export default function Header() {
+const Header = () => {
     return (
       <div className="header">
         <header className="header__main-container">
@@ -35,5 +35,5 @@ export default function Header() {
         </header>
       </div>
     );
-  }
-  
+  };
+  export default Header;
