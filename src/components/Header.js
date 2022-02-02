@@ -29,6 +29,7 @@ const Header = () => {
                 alt=""
               />
               <h4 className="header__upload-container-inner--upload">UPLOAD</h4>
+              <p></p>
             </div>
             <div className="header__upload-container--mohan header__tablet__muru"></div>
           </div>

@@ -38,12 +38,13 @@ const Comments = ({ comments, timeElapsed }) => {
 						</div>
 						<div className="comment__button-container">
 							<button className="comment__button">              
-							<img
-								className="header__upload-container-inner--icon"
-								src={commentIcon}
-								alt=""
-							/>
-							<span>COMMENT</span>
+								<img
+									className="comment__comment-container-inner--icon"
+									src={commentIcon}
+									alt=""
+								/>
+								<span>COMMENT</span>
+								<p></p>
 							</button>
 						</div>
 					</form>

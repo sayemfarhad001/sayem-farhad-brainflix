@@ -31,13 +31,13 @@ class App extends React.Component {
 			<Hero hero={this.state.mainVideo[0]} />
 			<div className="all-components__main">
 				<div className="all-components__one">
-				<Main main={this.state.mainVideo[0]} timeElapsed={this.timeElapsed} />
-				<Comments comments={this.state.mainVideo[0].comments} timeElapsed={this.timeElapsed}/>
+					<Main main={this.state.mainVideo[0]} timeElapsed={this.timeElapsed} />
+					<Comments comments={this.state.mainVideo[0].comments} timeElapsed={this.timeElapsed}/>
+					</div>
+					<div className="all-components__two">
+					<SideVideo sideVideos={newSideVideos} clickHandler={this.clickHandler}/>
+					</div>
 				</div>
-				<div className="all-components__two">
-				<SideVideo sideVideos={newSideVideos} clickHandler={this.clickHandler}/>
-				</div>
-			</div>
 			</div>
 		);
 	}
