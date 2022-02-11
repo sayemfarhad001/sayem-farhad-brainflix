@@ -1,5 +1,5 @@
 import React from "react";
-import eye from "../assets/icons/views.svg";
+import eyecon from "../assets/icons/views.svg";
 import heart from "../assets/icons/likes.svg";
 
 const Main = ({ main, timeElapsed }) => {
@@ -18,7 +18,7 @@ const Main = ({ main, timeElapsed }) => {
             </div>
             <div className="main__views-likes-container">
               <div className="main__views-container">
-                <img className="main__views-container--icon" src={eye} alt="" />
+                <img className="main__views-container--icon" src={eyecon} alt="" />
                 <h2 className="main__views-container--number">{main.views}</h2>
               </div>
               <div className="main__likes-container">

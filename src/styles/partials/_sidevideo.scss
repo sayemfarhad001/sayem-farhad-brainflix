@@ -1,6 +1,9 @@
 // Mobile First Style
 .sidevideo {
   margin: 2.5rem 1rem 1.5rem 1rem;
+  &__mainOne {
+    text-decoration: none;
+  }
   &__title {
     font-family: avenir-demi;
     @include mobile-labels;
@@ -10,6 +13,7 @@
   &__template-container {
     display: flex;
     margin-bottom: 1.5rem;
+    text-decoration: none;
   }
   &__image {
     width: 120px;
@@ -19,17 +23,34 @@
     border-radius: 0.3125rem;
   }
   &__title-video {
+    // font-family: avenir-demi;
+    // @include mobile-paragraph;
+    // word-break: break-word;
+    // width: 8.625rem;
+    // padding: 0 0 1rem 0;
+    // margin: 0;
+    // display: -webkit-box;
+    // -webkit-box-orient: vertical;
+    // -webkit-line-clamp: 2;
+    // text-overflow: ellipsis;
+    overflow: hidden;
+    width: 47.5vw;
+    max-width: 11rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
     font-family: avenir-demi;
-    @include mobile-paragraph;
-    word-break: break-word;
-    width: 8.625rem;
-    padding: 0 0 1rem 0;
-    margin: 0;
+    @include mobile-subheader;
+    color: $black;
+    margin: 0 0 1rem 0;
+
+
   }
   &__channel {
     font-family: avenir-regular;
     @include mobile-paragraph;
     margin: 0;
+    color: $black;
   }
 }
 

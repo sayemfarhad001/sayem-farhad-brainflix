@@ -1,18 +1,20 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const SideVideo = ({ sideVideos, clickHandler }) => {
+const SideVideo = ({ sideVideos }) => {
 	const videoMapper = sideVideos.map((object, index) => {
 		return (
-			<div key={index} id={object.id} className="sidevideo__main-container" 
-				onClick={ () => {clickHandler(object.id)} }>
-				<div className="sidevideo__template-container">
-					<img className="sidevideo__image" src={object.image} alt="" />
-					<div className="sidevideo__text-container">
-						<h4 className="sidevideo__title-video">{object.title}</h4>
-						<h4 className="sidevideo__channel">{object.channel}</h4>
+			<Link to={`/video/${object.id}`} key={index} className="sidevideo__mainOne">
+				<div key={index} id={object.id} className="sidevideo__main-container">
+					<div className="sidevideo__template-container">
+						<img className="sidevideo__image" src={object.image} alt="" />
+						<div className="sidevideo__text-container">
+							<h4 className="sidevideo__title-video">{object.title}</h4>
+							<h4 className="sidevideo__channel">{object.channel}</h4>
+						</div>
 					</div>
 				</div>
-			</div>
+			</Link>
 		);
 	});
 

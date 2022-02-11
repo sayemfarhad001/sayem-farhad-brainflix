@@ -78,6 +78,10 @@ body {
   margin: 0;
   color: #ffffff;
 }
+.header__upload-container--link {
+  text-decoration: none;
+  width: 100%;
+}
 .header__upload-container--mohan {
   height: 3rem;
   width: 3rem;
@@ -314,6 +318,102 @@ body {
   .main__views-likes-container {
     border: none;
     padding-right: 2rem;
+  }
+}
+.no-components {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #000;
+}
+
+.middle {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+.bar {
+  width: 10px;
+  height: 70px;
+  background: #fff;
+  display: inline-block;
+  transform-origin: bottom center;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  /*   box-shadow:5px 10px 20px inset rgba(255,23,25.2); */
+  -webkit-animation: loader 1.2s linear infinite;
+          animation: loader 1.2s linear infinite;
+}
+
+.bar1 {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+
+.bar2 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+
+.bar3 {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+
+.bar4 {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+
+.bar5 {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+.bar6 {
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+
+.bar7 {
+  -webkit-animation-delay: 0.7s;
+          animation-delay: 0.7s;
+}
+
+.bar8 {
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+}
+
+@-webkit-keyframes loader {
+  0% {
+    transform: scaleY(0.1);
+    background: none;
+  }
+  50% {
+    transform: scaleY(1);
+    background: yellowgreen;
+  }
+  100% {
+    transform: scaleY(0.1);
+    background: transparent;
+  }
+}
+
+@keyframes loader {
+  0% {
+    transform: scaleY(0.1);
+    background: none;
+  }
+  50% {
+    transform: scaleY(1);
+    background: yellowgreen;
+  }
+  100% {
+    transform: scaleY(0.1);
+    background: transparent;
   }
 }
 .comment {
@@ -640,6 +740,9 @@ body {
 .sidevideo {
   margin: 2.5rem 1rem 1.5rem 1rem;
 }
+.sidevideo__mainOne {
+  text-decoration: none;
+}
 .sidevideo__title {
   font-family: avenir-demi;
   font-size: 0.75rem;
@@ -650,6 +753,7 @@ body {
 .sidevideo__template-container {
   display: flex;
   margin-bottom: 1.5rem;
+  text-decoration: none;
 }
 .sidevideo__image {
   width: 120px;
@@ -660,19 +764,24 @@ body {
   border-radius: 0.3125rem;
 }
 .sidevideo__title-video {
+  overflow: hidden;
+  width: 47.5vw;
+  max-width: 11rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   font-family: avenir-demi;
-  font-size: 0.8125rem;
-  line-height: 1.125rem;
-  word-break: break-word;
-  width: 8.625rem;
-  padding: 0 0 1rem 0;
-  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  color: #323232;
+  margin: 0 0 1rem 0;
 }
 .sidevideo__channel {
   font-family: avenir-regular;
   font-size: 0.8125rem;
   line-height: 1.125rem;
   margin: 0;
+  color: #323232;
 }
 
 @media only screen and (min-width: 768px) {
@@ -712,6 +821,165 @@ body {
     font-size: 0.8125rem;
     line-height: 1.125rem;
     margin: 0;
+  }
+}
+.upload {
+  margin: 1.5rem 1rem 1.5rem 1rem;
+}
+.upload__title {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-family: avenir-bold;
+  margin: 0 0 2rem 0;
+}
+.upload__subtitle {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-family: avenir-demi;
+  color: #afafaf;
+  margin: 0;
+}
+.upload__video {
+  height: 153px;
+  width: 288px;
+  background-image: url("../assets/images/Upload-video-preview.jpg");
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  border-radius: 0.3125rem;
+  margin-bottom: 2rem;
+}
+.upload__input-container {
+  display: flex;
+  flex-direction: column;
+}
+.upload__input-container--text {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-family: avenir-demi;
+  color: #afafaf;
+  margin: 0;
+}
+.upload__text-container {
+  font-family: avenir-regular;
+  font-size: 0.8125rem;
+  border: 1px solid #323232;
+  border-radius: 0.25rem;
+  background-color: #fafafa;
+  border-color: #afafaf;
+  resize: none;
+  padding: 0.75rem 0.625rem 0.625rem 1.125rem;
+  width: 100%;
+}
+.upload__text-container:focus {
+  border: 2px solid #0095ff;
+  outline-width: 0;
+}
+.upload__text-container--one {
+  margin: 0 0 1.5rem 0;
+  height: 3rem;
+}
+.upload__text-container--two {
+  margin: 0 0 2rem 0;
+  height: 8.9375rem;
+}
+.upload__button-container {
+  display: flex;
+  flex-direction: column;
+}
+.upload__button-container--publish {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-family: avenir-demi;
+  background-color: #0095ff;
+  border-style: none;
+  height: 3.0313rem;
+  border-radius: 0.25rem;
+  color: #ffffff;
+  text-align: center;
+  width: 288px;
+  margin: 0 0 1.5rem 0;
+  outline-width: 0;
+  padding: 0;
+  align-self: center;
+}
+.upload__button-container--publish:hover {
+  background-color: #004892;
+}
+.upload__button-container--cancel {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-family: avenir-demi;
+  border-style: none;
+  height: 3.0313rem;
+  border-radius: 0.25rem;
+  outline-width: 0;
+  color: #0095ff;
+  background-color: #ffffff;
+}
+
+@media only screen and (min-width: 768px) {
+  .upload {
+    margin: 3rem 1.5rem;
+  }
+  .upload__title {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    margin: 0;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e1e1e1;
+  }
+  .upload__subtitle {
+    margin-top: 2.5rem;
+  }
+  .upload__video {
+    height: 11.4375rem;
+    width: 21.5rem;
+    margin-bottom: 2.5rem;
+  }
+  .upload__text-container--two {
+    margin-bottom: 2.5rem;
+  }
+  .upload__button-container {
+    border-top: 1px solid #e1e1e1;
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 2.5rem 0 0 0;
+  }
+  .upload__button-container--cancel {
+    padding: 0 3rem 0 0;
+  }
+  .upload__button-container--publish {
+    margin: 0;
+    width: 160px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .upload {
+    margin: 3rem 11.25rem;
+  }
+  .upload__big-container {
+    display: flex;
+    align-items: baseline;
+    width: 67.5rem;
+  }
+  .upload__textarea-container {
+    width: 100%;
+  }
+  .upload__video {
+    margin: 0 24px 0 0;
+  }
+  .upload__text-container {
+    width: 100%;
+  }
+  .upload__text-container--two {
+    height: 5.6875rem;
+  }
+  .upload__input-container {
+    width: 44.5rem;
+  }
+  .upload__button-container {
+    width: 67.5rem;
   }
 }
 @media only screen and (min-width: 1440px) {
