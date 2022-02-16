@@ -1,34 +1,12 @@
 import React from "react";
-import axios from "axios";
-import Bike from "../assets/images/Upload-video-preview.jpg"
-import { API_KEY } from "./HomePage"
+import publishIcon from "../assets/icons/publish.svg";
+
 class Upload extends React.Component {
-    state = {
-        videos: []
-    }
-    
-    componentDidMount() {
-        axios
-            .get(`https://project-2-api.herokuapp.com/videos?api_key=${API_KEY.myKey}`)
-            .then(result => {
-                this.setState({
-                    videos: result.data
-            })
-        })
-    }
 
     handleFormSubmit = event => {
         event.preventDefault();
-        axios
-            .post(`https://project-2-api.herokuapp.com/videos?api_key=${API_KEY.myKey}`, {
-                title:  event.target.title.value,
-                description:  event.target.description.value,
-                image:  Bike,
-                channel:  event.target.channel.value,
-            })
-            .then(result => {
-                this.props.history.push(`/video/${result.data}`)
-            })
+        alert("Video has been uploaded successfully! Click OK to go to homepage!")
+        this.props.history.push(`/video/84e96018-4022-434e-80bf-000ce4cd12b8`);
     };
 
     render() {
@@ -63,10 +41,18 @@ class Upload extends React.Component {
                                 placeholder="Add a description of your video"
                             ></textarea>
                         </div>
-                        <input type="hidden" name="channel" value="Philip Bertogg" />
+                        <input type="hidden" name="channel" value="Sayem Farhad" />
                     </div>
                     <div className="upload__button-container">
-                        <button className="upload__button-container--publish">PUBLISH</button>
+                        <button className="upload__button-container--publish">
+                            <img
+                                className="upload__button-container--icon"
+                                src={publishIcon}
+                                alt=""
+                            />
+                            <span>PUBLISH</span>
+                            <p></p>
+                        </button>
                         <button className="upload__button-container--cancel">CANCEL</button>
                     </div>
                 </form>

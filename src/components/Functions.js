@@ -1,4 +1,4 @@
-// DEEP DIVING EXPERIENCE
+// Time Elapsed Function
 let timeElapsed = (date) => {
     if (typeof date !== 'object') {
         date = new Date(date);
@@ -38,3 +38,10 @@ let timeElapsed = (date) => {
     return `${interval} ${intervalType} ago`;
 }
 export default timeElapsed
+
+//SORT FUNCTION
+export function sortComments(posts){
+    return posts.sort( (a,b) => {
+        return b.timestamp - a.timestamp;
+    })
+}

@@ -9,7 +9,7 @@ const Header = () => {
       <div className="header">
         <header className="header__main-container">
           <div className="header__logo-container">
-            <Link to="/" className="header__logo-container--link">
+            <Link to={ `/video/84e96018-4022-434e-80bf-000ce4cd12b8` } className="header__logo-container--link">
               <img className="header__logo" src={logo} alt="" />
             </Link>
           </div>

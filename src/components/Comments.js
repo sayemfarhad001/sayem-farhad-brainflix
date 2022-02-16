@@ -1,10 +1,11 @@
 import React from "react";
 import commentIcon from "../assets/icons/add_comment.svg";
+import { sortComments } from "./Functions"
 
-const Comments = ({ comments, timeElapsed }) => {
-	const Comments = comments.map((object, index) => {
+const Comments = ({ comments, timeElapsed, postComments, deleteComment }) => {
+	const Comments = sortComments(comments).map((object, index) => {
 		return (
-			<div key={index} className="comment__default">
+			<div key={index} className="comment__default" id={object.id}>
 				<div className="comment__image-container-one">
 					<div className="comment__header--image-one"></div>
 				</div>
@@ -14,6 +15,7 @@ const Comments = ({ comments, timeElapsed }) => {
 				</div>
 				<div className="comment__text-container-default">
 					<p className="comment__text-container-default--comment">{object.comment}</p>
+					<button onClick={deleteComment} id={object.id} className="comment__delete" ></button>
 				</div>
 			</div>
 		);
@@ -25,15 +27,15 @@ const Comments = ({ comments, timeElapsed }) => {
 				<h1 className="comment__title">{comments.length} Comments</h1>
 				<div className="comment__name-container">
 					<div className="comment__image"></div>
-					<form className="comment__input-container">
+					<form onSubmit={postComments} className="comment__input-container">
 						<div className="comment__input-text-container">
 							<h5 className="comment__input-container--text">JOIN THE CONVERSATION</h5>
 							<textarea
-							className="comment__text-container comment__text-container--one"
-							name="name"
-							rows="10"
-							cols="50"
-							placeholder="Add a new comment"
+								className="comment__text-container comment__text-container--one"
+								name="comment"
+								rows="10"
+								cols="50"
+								placeholder="Add a new comment"
 							></textarea>
 						</div>
 						<div className="comment__button-container">

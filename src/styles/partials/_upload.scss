@@ -16,8 +16,8 @@
     }
   
     &__video {
-      height: 153px;
-      width: 288px;
+      height: 190px;
+      width: 100%;
       background-image: url("../assets/images/Upload-video-preview.jpg");
       background-size: cover;
       background-position: bottom;
@@ -65,6 +65,10 @@
       flex-direction: column;
       &--publish {
         @include mobile-paragraph;
+        display: flex;
+        margin: 0.5rem 0 0 0;
+        justify-content: space-between;
+        align-items: center;
         font-family: avenir-demi;
         background-color: $blue-light;
         border-style: none;
@@ -72,14 +76,16 @@
         border-radius: 0.25rem;
         color: $white;
         text-align: center;
-        width: 288px;
+        width: 100%;
         margin: 0 0 1.5rem 0;
         outline-width: 0;
-        padding: 0;
         align-self: center;
         &:hover {
           background-color: $blue;
         }
+      }
+      &--icon {
+        padding: 0 0 0 0.625rem;
       }
       &--cancel {
         @include mobile-paragraph;
@@ -90,6 +96,7 @@
         outline-width: 0;
         color: $blue-light;
         background-color: $white;
+        padding-left: 38px;
       }
     }
   }

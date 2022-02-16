@@ -130,8 +130,10 @@ body {
     padding-left: 5px;
     padding-right: 5px;
   }
+  .header__upload-container--link {
+    width: 80%;
+  }
   .header__upload-container--mohan {
-    align-self: flex-end;
     margin: 0;
   }
   .header__mobile__muru {
@@ -524,6 +526,7 @@ body {
 }
 .comment__text-container-default {
   display: flex;
+  justify-content: space-between;
 }
 .comment__text-container-default--comment {
   word-wrap: break-word;
@@ -533,6 +536,20 @@ body {
   font-family: avenir-regular;
   margin: 0;
   padding: 1rem 0 1.5rem 1rem;
+}
+.comment__delete {
+  border: none;
+  background-image: url("../assets/icons/trash-can-solid.svg");
+  background-size: contain;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-color: #ffffff;
+  width: 1rem;
+  height: 2rem;
+  margin: 1.5rem 1rem 0 0;
+}
+.comment__delete:hover {
+  transform: scale(1.5);
 }
 
 @media only screen and (min-width: 768px) {
@@ -840,8 +857,8 @@ body {
   margin: 0;
 }
 .upload__video {
-  height: 153px;
-  width: 288px;
+  height: 190px;
+  width: 100%;
   background-image: url("../assets/images/Upload-video-preview.jpg");
   background-size: cover;
   background-position: bottom;
@@ -890,6 +907,10 @@ body {
 .upload__button-container--publish {
   font-size: 0.8125rem;
   line-height: 1.125rem;
+  display: flex;
+  margin: 0.5rem 0 0 0;
+  justify-content: space-between;
+  align-items: center;
   font-family: avenir-demi;
   background-color: #0095ff;
   border-style: none;
@@ -897,14 +918,16 @@ body {
   border-radius: 0.25rem;
   color: #ffffff;
   text-align: center;
-  width: 288px;
+  width: 100%;
   margin: 0 0 1.5rem 0;
   outline-width: 0;
-  padding: 0;
   align-self: center;
 }
 .upload__button-container--publish:hover {
   background-color: #004892;
+}
+.upload__button-container--icon {
+  padding: 0 0 0 0.625rem;
 }
 .upload__button-container--cancel {
   font-size: 0.8125rem;
@@ -916,6 +939,7 @@ body {
   outline-width: 0;
   color: #0095ff;
   background-color: #ffffff;
+  padding-left: 38px;
 }
 
 @media only screen and (min-width: 768px) {

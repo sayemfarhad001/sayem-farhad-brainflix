@@ -103,8 +103,10 @@
         padding-left: 5px;
         padding-right: 5px;
       }
+      &--link {
+        width: 80%;
+      }
       &--mohan {
-        align-self: flex-end;
         margin: 0;
       }
     }
