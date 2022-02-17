@@ -18,7 +18,6 @@ class HomePage extends React.Component {
 	};
 
     componentDidMount() {
-
         // GET ALL VIDEOS
         axios
             .get(`https://project-2-api.herokuapp.com/videos?api_key=${API_KEY.myKey}`)
