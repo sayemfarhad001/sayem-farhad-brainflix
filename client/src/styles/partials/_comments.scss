@@ -131,10 +131,15 @@
 		width: 1rem;
 		height: 2rem;
 		margin: 1.5rem 1rem 0 0;
+		display:none;
 	}
 	&__delete:hover {
 		transform: scale(1.5);
 	}
+}
+// Display Delete Icon
+.comment__default:hover .comment__delete {
+	display: flex;
 }
 
 // Tablet Style

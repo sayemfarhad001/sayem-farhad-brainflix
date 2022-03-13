@@ -3,19 +3,22 @@ import commentIcon from "../assets/icons/add_comment.svg";
 import { sortComments } from "./Functions"
 
 const Comments = ({ comments, timeElapsed, postComments, deleteComment }) => {
+
 	const Comments = sortComments(comments).map((object, index) => {
 		return (
-			<div key={index} className="comment__default" id={object.id}>
+			<div key={index} className="comment__default" id={object.timestamp}>
 				<div className="comment__image-container-one">
 					<div className="comment__header--image-one"></div>
 				</div>
 				<div className="comment__header">
 					<h2 className="comment__header--name">{object.name}</h2>
-					<h3 className="comment__header--date">{timeElapsed(object.timestamp)}</h3>
+					<h3 className="comment__header--date">
+						{timeElapsed(object.timestamp)}
+					</h3>
 				</div>
 				<div className="comment__text-container-default">
 					<p className="comment__text-container-default--comment">{object.comment}</p>
-					<button onClick={deleteComment} id={object.id} className="comment__delete" ></button>
+					<button onClick={deleteComment} id={object.timestamp} className="comment__delete" ></button>
 				</div>
 			</div>
 		);

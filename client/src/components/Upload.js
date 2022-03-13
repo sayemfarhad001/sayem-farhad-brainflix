@@ -1,12 +1,41 @@
 import React from "react";
 import publishIcon from "../assets/icons/publish.svg";
+import Bike from "../assets/images/Upload-video-preview.jpg"
+import axios from "axios";
+import { withRouter } from "react-router-dom";
 
-class Upload extends React.Component {
+class App extends React.Component {
+
+    state = {
+        videos: []
+    };
+    
+    componentDidMount() {
+        axios.get("api/videos").then(res => {
+            this.setState({
+            videos: res.data
+            });
+        });
+    }
 
     handleFormSubmit = event => {
         event.preventDefault();
-        alert("Video has been uploaded successfully! Click OK to go to homepage!")
-        this.props.history.push(`/video/84e96018-4022-434e-80bf-000ce4cd12b8`);
+        
+        axios
+        .post("http://localhost:5000/api/videos", {
+          title: event.target.title.value,
+          description: event.target.description.value,
+          image: Bike,
+          channel: event.target.channel.value
+        })
+        .then(res => {
+          // this.setState({});
+          alert("Video has been uploaded successfully! Click OK to go to homepage!")
+          this.props.history.push(`/video/${res.data}`);
+        });
+
+        // 
+        // this.props.history.push(`/video/84e96018-4022-434e-80bf-000ce4cd12b8`);
     };
 
     render() {
@@ -61,4 +90,4 @@ class Upload extends React.Component {
     }
 
 }
-export default Upload;
+export default withRouter(App);
