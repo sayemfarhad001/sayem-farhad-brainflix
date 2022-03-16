@@ -143,7 +143,7 @@ body {
     display: flex;
   }
 }
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1280px) {
   .header__main-container {
     margin: 0 11.25rem;
   }
@@ -180,7 +180,7 @@ body {
        object-fit: cover;
   }
 }
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1280px) {
   .hero {
     height: 33.75rem;
   }
@@ -310,7 +310,7 @@ body {
     width: 68%;
   }
 }
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1280px) {
   .main {
     margin: 3rem 0px 4rem 11.25rem;
   }
@@ -678,7 +678,7 @@ body {
     padding: 1rem 0 1.5rem 4rem;
   }
 }
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1280px) {
   .comment {
     width: 712px;
     background-color: #ffffff;
@@ -825,7 +825,7 @@ body {
     margin: 0;
   }
 }
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1280px) {
   .sidevideo {
     padding: 2.5rem 11.25rem 0px 1.5rem;
     margin: 0;
@@ -983,7 +983,7 @@ body {
     width: 160px;
   }
 }
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1280px) {
   .upload {
     margin: 3rem 11.25rem;
   }
@@ -1011,7 +1011,7 @@ body {
     width: 67.5rem;
   }
 }
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1280px) {
   .all-components__main {
     display: flex;
   }

@@ -21,5 +21,5 @@ app.use(express.static("public"));
 const videoRoutes = require("./routes/videos");
 app.use("/api/videos", videoRoutes);
 
-// start the server and listen on port 8080
+// start the server and listen on port 5000
 app.listen(PORT, () => {console.log(`listening from ${PORT}`)});
