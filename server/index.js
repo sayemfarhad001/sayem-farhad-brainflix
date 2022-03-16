@@ -4,22 +4,18 @@ require("dotenv").config();
 
 const PORT = process.env.PORT || process.argv[2] || 8080;
 
-// cross origin resource sharing
 const cors = require('cors');
 app.use(cors());
 
-// express.urlencoded allows posting form data
+// ALLOWS POSTING FROM DATA
 app.use(express.urlencoded({ extended: true }));
-
-// in order to access req.body you need to use express.json() middleware
 app.use(express.json());
 
-// serve public files e.g. index.html
+// SERVE PUBLIC FILES
 app.use(express.static("public"));
 
-// get, post, put methods for /api/videos
+// METHODS FOR API/VIDEOS
 const videoRoutes = require("./routes/videos");
 app.use("/api/videos", videoRoutes);
 
-// start the server and listen on port 5000
 app.listen(PORT, () => {console.log(`listening from ${PORT}`)});

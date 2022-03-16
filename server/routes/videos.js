@@ -1,14 +1,10 @@
-// include express in order to use methods like .Router()
 const express = require("express");
-// reference to the videos file in order to write using writeJSONFile
 const videosFile = __dirname + "/../data/video-details.json";
-// work with array of data from videos
 const videos = require(videosFile);
-// helper functions: writeJSONFile & getNewId
 const helper = require("../helper/helper");
-// setup express router
 const router = express.Router();
 
+// GET VIDEO
 router.get("/", (req, res) => {
 	const videoList = videos
 	res.send(videoList);
