@@ -3,21 +3,23 @@ const fs = require("fs");
 const { v4: uuidv4 } = require('uuid');
 
 // Re-usable function to read our data file
-function readVideos(filename) {
-  const videoData = fs.readFileSync(filename, "utf8");
+function readVideos(filepath) {
+  const videoData = fs.readFileSync(filepath, {encoding:'utf8', flag:'r'},        
+    function(err, data) {
+      if(err)
+          console.log(err);
+      else
+          console.log(data);
+    });
   // console.log(videoData)
   const parsedData = JSON.parse(videoData);
-  console.log(parsedData)
+  // console.log(parsedData)
   return parsedData;
-
-
-
 }
 
-function writeJSONFile(filename, content) {
-  fs.writeFileSync(filename, JSON.stringify(content), "utf8", err => {
-    if (err) {
-    }
+function writeJSONFile(filepath, content) {
+  fs.writeFileSync(filepath, JSON.stringify(content), "utf8", err => {
+     console.log(err)
   });
 }
 

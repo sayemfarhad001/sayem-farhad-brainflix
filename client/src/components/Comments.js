@@ -18,7 +18,7 @@ const Comments = ({ comments, timeElapsed, postComments, deleteComment }) => {
 				</div>
 				<div className="comment__text-container-default">
 					<p className="comment__text-container-default--comment">{object.comment}</p>
-					<button onClick={deleteComment} id={object.timestamp} className="comment__delete" ></button>
+					<button onClick={deleteComment} id={object.timestamp} className="comment__delete" method="DELETE" ></button>
 				</div>
 			</div>
 		);
@@ -30,7 +30,7 @@ const Comments = ({ comments, timeElapsed, postComments, deleteComment }) => {
 				<h1 className="comment__title">{comments.length} Comments</h1>
 				<div className="comment__name-container">
 					<div className="comment__image"></div>
-					<form onSubmit={postComments} className="comment__input-container">
+					<form onSubmit={postComments} className="comment__input-container" method="POST">
 						<div className="comment__input-text-container">
 							<h5 className="comment__input-container--text">JOIN THE CONVERSATION</h5>
 							<textarea
@@ -42,7 +42,7 @@ const Comments = ({ comments, timeElapsed, postComments, deleteComment }) => {
 							></textarea>
 						</div>
 						<div className="comment__button-container">
-							<button className="comment__button">              
+							<button className="comment__button" type="submit">              
 								<img
 									className="comment__comment-container-inner--icon"
 									src={commentIcon}

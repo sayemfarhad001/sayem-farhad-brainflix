@@ -2,21 +2,21 @@ import React from "react";
 import publishIcon from "../assets/icons/publish.svg";
 import Bike from "../assets/images/Upload-video-preview.jpg"
 import axios from "axios";
-import { withRouter } from "react-router-dom";
+// import { withRouter } from "react-router-dom";
 
-class App extends React.Component {
+class Upload extends React.Component {
 
     state = {
         videos: []
     };
     
-    componentDidMount() {
-        axios.get("api/videos").then(res => {
-            this.setState({
-            videos: res.data
-            });
-        });
-    }
+    // componentDidMount() {
+    //     axios.get("api/videos").then(res => {
+    //         this.setState({
+    //             videos: res.data
+    //         });
+    //     });
+    // }
 
     handleFormSubmit = event => {
         event.preventDefault();
@@ -29,7 +29,6 @@ class App extends React.Component {
           channel: event.target.channel.value
         })
         .then(res => {
-          // this.setState({});
           alert("Video has been uploaded successfully! Click OK to go to homepage!")
           this.props.history.push(`/video/${res.data}`);
         });
@@ -90,4 +89,6 @@ class App extends React.Component {
     }
 
 }
-export default withRouter(App);
+
+export default Upload;
+// withRouter(App);

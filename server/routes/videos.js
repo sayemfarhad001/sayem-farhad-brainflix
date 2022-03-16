@@ -9,47 +9,51 @@ const videos = require(videosFile);
 const helper = require("../helper/helper");
 // setup express router
 const router = express.Router();
-/**
- * Get all the videos but with fewer properties/keys
- */
+//  Get all the videos but with fewer properties/keys
 router.get("/", (req, res) => {
   const videoList = videos
+
+  // Following code can be used to collect limited properties like the sprint-1 API 
+  // Corresponding client side adjustment required
+
+  // .map(video => {
+  //   return {
+  //     id: video.id,
+  //     title: video.title,
+  //     image: video.image,
+  //     channel: video.channel
+  //   };
+  // });
+  
   res.send(videoList);
 });
 
-/**
- * Get video by id
- */
+// GET VIDEO BY ID
 router.get("/:id", (req, res) => {
-  // const found = videos.some(video => video.id === req.params.id);
-  // if (found) {
-  //   res.json(videos.filter(video => video.id === req.params.id));
-  // } else {
-  //   res
-  //     .status(400)
-  //     .json({ errorMessage: `Video with ID:${req.params.id} not found` });
-  // }
-  res.send(videos);
+  const found = videos.some(video => video.id === req.params.id);
+  if (found) {
+    res.json(videos.filter(video => video.id === req.params.id));
+  } else {
+    res
+      .status(400)
+      .json({ errorMessage: `Video with ID:${req.params.id} not found` });
+  }
 });
 
-/**
- * Post new video
- */
+// POST NEW VIDEO
 router.post("/", (req, res) => {
   const newVideo = {
-    id: helper.getNewId(),
     title: req.body.title,
-    description: req.body.description,
-    image: req.body.image,
     channel: req.body.channel,
-
-    views: 999,
-    likes: 888,
-
+    image: req.body.image,
+    description: req.body.description,
+    views: 0,
+    likes: 0,
+    duration: "4:01",
+    video: "https://project-2-api.herokuapp.com/stream",
     timestamp: helper.timestamp(),
-    // video:
-    comments: []
-
+    comments: [],
+    id: helper.getNewId()
   };
   if (!newVideo.title || !newVideo.description) {
     return res.status(400).json({
@@ -67,41 +71,42 @@ router.post("/:id/comments", (req, res) => {
     // id: helper.getNewId(),
     name: req.body.name,
     comment: req.body.comment,
-    // title: req.body.title,
-    // channel: req.body.channel,
-    // description: req.body.description,
-    // image: req.body.image,
-    // views: 999,
-    likes: 888,
+    likes: 0,
     timestamp: helper.timestamp(),
-    // video:
   };
-  if (!newComment.name || !newComment.comment) {
+ if (!newComment.name || !newComment.comment) {
     return res.status(400).json({
       errorMessage: "Please provide name and comment"
     });
-  }
-
-  let oldJson = helper.readVideos(videosFile)
-  // console.log(oldJson)
-  // console.log(req.params.id)
+  } 
+  let oldJson = videos
   oldJson.forEach((vid) => {
       if (vid.id === req.params.id) {  
         vid.comments.push(newComment)
     }    
   })
-
-
-  // console.log(`/////////////////////////////new//////////////////
-  // ${oldJson}//////////////////////////////json///////////////////`)
-    
-  // videos.push(newComment);
-
   helper.writeJSONFile(videosFile, oldJson);
-
-  res.send(newComment);
+  res.send(oldJson);    // switch with this
 });
 
 //COMMENT DELETE
-
+router.delete("/:videoId/comments/:commentId", 
+  (req, res) => {
+    // const videoId = req.params.videoId  //line 234 Homepage.js and video - https://www.youtube.com/watch?v=VVGgacjzc2Y - time 31:47
+    // const commentId = req.params.commentId
+    let oldJson = videos
+  
+    oldJson.forEach((vid) => {
+        if (vid.id === req.params.videoId) {  
+          let newCommentList = []
+          vid.comments.forEach( comm => {
+            (comm.timestamp.toString() !== req.params.commentId.toString()) 
+            ? newCommentList.push(comm) : newCommentList   
+          })
+          vid.comments = newCommentList
+      }    
+    })
+    helper.writeJSONFile(videosFile, oldJson);
+    res.send(oldJson)
+  })
 module.exports = router;
