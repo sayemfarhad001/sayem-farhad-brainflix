@@ -45,3 +45,10 @@ export function sortComments(posts){
         return b.timestamp - a.timestamp;
     })
 }
+
+// FUNCTION FOR GETTING UPLOADED IMAGE FILE PATH
+export function theimage(){
+    var filename = document.getElementById('file-id').value;
+    document.getElementById('file-path').value = filename;
+    alert(filename);
+}

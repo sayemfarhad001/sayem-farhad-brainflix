@@ -2,8 +2,10 @@ import React from "react";
 import publishIcon from "../assets/icons/publish.svg";
 import Bike from "../assets/images/Upload-video-preview.jpg"
 import axios from "axios";
+// import UploadImages from "./UploadImage";  // COMPONENT FOR UPLOAD IMAGE (WORK IN PROGRESS)
 
 // CREATED CLASS AND STATE TO WORK ON DEEP DIVING 
+// (OTHERWISE FUCTION COMPONENT COULD BE USED) 
 class Upload extends React.Component {
     state = {
         videos: []
@@ -19,7 +21,7 @@ class Upload extends React.Component {
                 channel: event.target.channel.value
             })
             .then(res => {
-                this.setState({});
+                // this.setState({});
                 alert("Video has been uploaded successfully! Click OK to go to homepage!")
                 this.props.history.push(`/video/${res.data}`);
             })
@@ -37,6 +39,7 @@ class Upload extends React.Component {
                             <div className="upload__video">
                                 <img src="" alt="" />
                             </div>
+                            {/* <UploadImages />*/}
                         </div>
                         <div className="upload__textarea-container">
                             <h5 className="upload__input-container--text">TITLE YOUR VIDEO</h5>
@@ -61,7 +64,7 @@ class Upload extends React.Component {
                         <input type="hidden" name="channel" value="Sayem Farhad" />
                     </div>
                     <div className="upload__button-container">
-                        <button className="upload__button-container--publish">
+                        <button className="upload__button-container--publish"  >
                             <img
                                 className="upload__button-container--icon"
                                 src={publishIcon}

@@ -22,6 +22,8 @@ body {
 @import "./partials/comments";
 @import "./partials/sidevideo";
 @import "./partials/upload";
+@import "./partials/uploadImage";
+@import "./partials/videoControls";
 
 // Desktop Display
 @include large {
